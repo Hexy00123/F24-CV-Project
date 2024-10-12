@@ -17,6 +17,7 @@ class MultiHeadAttention(nn.Module):
     
     def __init__(self, d_model: int, h: int, dropout_rate: float):
         super().__init__()
+        
         self.d_model = d_model 
         self.h = h
         assert self.d_model % self.h == 0, "it is mandatory to d_model be divisible by h"
@@ -63,3 +64,4 @@ class MultiHeadAttention(nn.Module):
         # (Batch, Seq, d_model) --> (Batch, Seq, d_model)
         x = self.w_o(x)
         return x  
+    

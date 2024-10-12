@@ -4,7 +4,7 @@ import torch.nn as nn
 
 class FeedForwardBlock(nn.Module):
     """
-    Feed forward block of the transformer
+    Feed forward block of the transformer.
 
     Parameters
     ----------
@@ -17,6 +17,8 @@ class FeedForwardBlock(nn.Module):
     """
 
     def __init__(self, d_model: int, d_ff: int, dropout_rate: float):
+        super().__init__()
+        
         self.feed_forward = nn.Sequential(
             nn.Linear(d_model, d_ff), 
             nn.ReLU(),
