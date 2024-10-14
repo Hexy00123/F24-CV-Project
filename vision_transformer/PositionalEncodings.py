@@ -17,7 +17,7 @@ class PositionalEncodings(nn.Module):
 
         PE = torch.zeros(seq_len, d_model)
 
-        pos = torch.arange(0, seq_len, 2).unsqueeze(1)
+        pos = torch.arange(0, seq_len).unsqueeze(1)
         div_term = torch.exp(torch.arange(0, d_model, 2).float() * (-math.log(10000.0) / d_model))
 
         PE[:, 0::2] = torch.sin(pos * div_term)
@@ -37,5 +37,5 @@ class PositionalEncodings(nn.Module):
             return
                 Tensor of shape (batch , sequence_length, d_model) 
         """
-        x = x + self.PR[:, :x.size(1)]
+        x = x + self.PE[:, :x.size(1)]
         return x
