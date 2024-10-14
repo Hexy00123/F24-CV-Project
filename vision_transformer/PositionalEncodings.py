@@ -1,6 +1,3 @@
-# TODO: implement a class that would take a sequence of
-# image embeddings (Batch, sequence_length, embedding_size)
-# and would add a position encoding to each sequence in a batch
 import math
 import torch
 import torch.nn as nn
@@ -9,6 +6,14 @@ from jaxtyping import Float
 from torch import Tensor
 
 class PositionalEncodings(nn.Module):
+    """
+    PositionalEncodings - adds positional encodings to the input tensor.
+
+    Args:
+        seq_len (int): The length of the sequence.
+        d_model (int): The dimensionality of the model.
+
+    """
     def __init__(self, 
                 seq_len: int,
                 d_model: int
@@ -30,12 +35,5 @@ class PositionalEncodings(nn.Module):
     def forward(self, 
                 x: Float[Tensor, "batch seq_len d_model"]
     ):
-        """
-            Args
-                x -> Tensor of shape (batch , sequence_length, d_model)
-
-            return
-                Tensor of shape (batch , sequence_length, d_model) 
-        """
         x = x + self.PE[:, :x.size(1)]
         return x
