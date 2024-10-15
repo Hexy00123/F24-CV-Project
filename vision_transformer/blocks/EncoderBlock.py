@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 
-from vision_transformer.FeedForwardBlock import FeedForwardBlock
-from vision_transformer.MultiHeadAttn import MultiHeadAttention
-from vision_transformer.SkipConnectionBlock import SkipConnectionBlock
+from .FeedForwardBlock import FeedForwardBlock
+from .MultiHeadAttn import MultiHeadAttention
+from .SkipConnectionBlock import SkipConnectionBlock
 
 
 class EncoderBlock(nn.Module):

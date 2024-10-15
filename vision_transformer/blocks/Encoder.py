@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from vision_transformer.LayerNorm import LayerNorm
+from .LayerNorm import LayerNorm
 
 class Encoder(nn.Module): 
     """
