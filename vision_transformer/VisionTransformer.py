@@ -55,14 +55,14 @@ class ViT(nn.Module):
     ):
         super().__init__()
         
-        self.img_size: int = img_size,
-        self.in_channels: int = in_channels,
-        self.patch_size: int = patch_size,
-        self.d_model: int = d_model,
-        self.dropout_rate: float = dropout_rate,
-        self.n_encoder_blocks: int = n_encoder_blocks,
-        self.n_heads: int = n_heads,
-        self.ff_size: int = ff_size,
+        self.img_size: int = img_size
+        self.in_channels: int = in_channels
+        self.patch_size: int = patch_size
+        self.d_model: int = d_model
+        self.dropout_rate: float = dropout_rate
+        self.n_encoder_blocks: int = n_encoder_blocks
+        self.n_heads: int = n_heads
+        self.ff_size: int = ff_size
 
         # Image embeddings initializaton
         self.embedder = PatchEmbedder(
