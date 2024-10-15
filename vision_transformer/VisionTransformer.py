@@ -54,13 +54,22 @@ class ViT(nn.Module):
         ff_size: int = 2048,
     ):
         super().__init__()
+        
+        self.img_size: int = img_size,
+        self.in_channels: int = in_channels,
+        self.patch_size: int = patch_size,
+        self.d_model: int = d_model,
+        self.dropout_rate: float = dropout_rate,
+        self.n_encoder_blocks: int = n_encoder_blocks,
+        self.n_heads: int = n_heads,
+        self.ff_size: int = ff_size,
 
         # Image embeddings initializaton
         self.embedder = PatchEmbedder(
-            img_size=img_size,
-            patch_size=patch_size,
-            in_channels=in_channels,
-            d_model=d_model,
+            img_size=self.img_size,
+            patch_size=self.patch_size,
+            in_channels=self.in_channels,
+            d_model=self.d_model,
         )
 
         # Position encoder initialization
@@ -68,11 +77,11 @@ class ViT(nn.Module):
 
         # Encoder initialization
         self.encoder = ViT.make_encoder(
-            d_model=d_model,
-            n_encoder_blocks=n_encoder_blocks,
-            n_heads=n_heads,
-            ff_size=ff_size,
-            dropout_rate=dropout_rate,
+            d_model=self.d_model,
+            n_encoder_blocks=self.n_encoder_blocks,
+            n_heads=self.n_heads,
+            ff_size=self.ff_size,
+            dropout_rate=self.dropout_rate,
         )
 
         # Classification tocken initialization
