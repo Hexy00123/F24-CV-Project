@@ -30,6 +30,8 @@ class MultiHeadAttention(nn.Module):
         
         self.w_o = nn.Linear(d_model, d_model)
         self.dropout = nn.Dropout(dropout_rate)       
+        
+        self.__last_compute = None 
                
     def attention(self, query, key, value, mask): 
         # (Batch, h, Seq, Seq)
@@ -57,11 +59,18 @@ class MultiHeadAttention(nn.Module):
                 
         # (Batch, h, Seq, d_k). (Batch, h, Seq, Seq)
         x, attention_scores = self.attention(query=query, key=key, value=value, mask=mask)
-        
+        self.__last_compute = attention_scores.detach().clone()
+                
         # (Batch, h, Seq, d_k) --> (Batch, Seq, h, d_k) --> (Batch, Seq, d_model)
         x = x.transpose(1, 2).contiguous().view(x.shape[0], -1, self.d_model)
                 
         # (Batch, Seq, d_model) --> (Batch, Seq, d_model)
-        x = self.w_o(x)
+        x = self.w_o(x)        
         return x  
+    
+    def get_last_compute(self):
+        if self.__last_compute is None: 
+            raise BufferError("You need to make feed forward pass before asking for attention scores")
+        
+        return self.__last_compute 
     
