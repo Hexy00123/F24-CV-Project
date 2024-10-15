@@ -20,7 +20,8 @@ class PositionalEncoding(nn.Module):
     """
 
     def __init__(self, d_model: int, max_len: int = 5000):
-        super(PositionalEncoding, self).__init__()
+        super().__init__()
+        
         self.d_model = d_model
         pe = torch.zeros(max_len, d_model)
 

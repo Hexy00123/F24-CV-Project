@@ -1,17 +1,26 @@
-# TODO: Implemet image patcher class that takes
-# batch of images and cut it into sequence of patches
-# (Batch, channels, height, width) -> (Batch, sequence_length, channels, height, width)
-
-
-# TODO: implement a class that would take a sequence of
-# image patches (Batch, sequence_length, channels, height, width) and return a sequence of
-# image embeddings (Batch, sequence_length, embedding_size)
-
 import torch
 import torch.nn as nn
 
 
 class PatchEmbedder(nn.Module):
+    """
+    Embedding block of the transformer. 
+    
+    Takes an image as input and splits it on patches of size patch_size x patch_size. 
+    Then for each patch it performs 
+
+    Parameters
+    ----------
+    img_size : int
+        size of image sides (both heigth and width)
+    patch_size : int
+        heigth and width of each patch that image would be splitted
+    in_channels : int
+        number of channels in input image
+    d_model: int
+        dimentionallity of the embeddings
+    """
+    
     def __init__(self, img_size: int, patch_size: int, in_channels: int, d_model: int):
         super().__init__()
 
@@ -39,11 +48,3 @@ class PatchEmbedder(nn.Module):
         # (Batch, d_model, Seq) --> (Batch, Seq, d_model)
         x = x.transpose(-1, -2)
         return x
-
-
-if __name__ == '__main__': 
-    img_batch = torch.rand((20, 3, 64, 64))
-    print(img_batch.shape)
-    
-    embedder = PatchEmbedder(64, 16, 3, 512)
-    print(embedder(img_batch).shape)
