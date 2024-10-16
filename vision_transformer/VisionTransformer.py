@@ -4,7 +4,7 @@ import torchinfo
 
 from vision_transformer.blocks.ImageEmbeddings import PatchEmbedder
 from vision_transformer.blocks.PositionalEncodings import PositionalEncoding
-from vision_transformer.blocks.MultiHeadAttn import MultiHeadAttention
+from vision_transformer.blocks.MultiHeadAttention import MultiHeadAttention
 from vision_transformer.blocks.FeedForwardBlock import FeedForwardBlock
 from vision_transformer.blocks.EncoderBlock import EncoderBlock
 from vision_transformer.blocks.Encoder import Encoder
@@ -73,7 +73,7 @@ class ViT(nn.Module):
         )
 
         # Position encoder initialization
-        self.position_encoder = PositionalEncoding(self.embedder.d_model, max_len=100)
+        self.position_encoder = PositionalEncoding(self.embedder.d_model)
 
         # Encoder initialization
         self.encoder = ViT.make_encoder(

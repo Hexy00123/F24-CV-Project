@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 from .FeedForwardBlock import FeedForwardBlock
-from .MultiHeadAttn import MultiHeadAttention
+from .MultiHeadAttention import MultiHeadAttention
 from .SkipConnectionBlock import SkipConnectionBlock
 
 

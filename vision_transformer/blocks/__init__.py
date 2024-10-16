@@ -4,7 +4,7 @@ __all__ = [
     "FeedForwardBlock",
     "ImageEmbeddings",
     "LayerNorm",
-    "MultiHeadAttn",
+    "MultiHeadAttention",
     "PositionalEncodigns",
     "SkipConnections",
 ]
@@ -14,6 +14,6 @@ __all__ = [
 # from . import FeedForwardBlock
 # from . import ImageEmbeddings
 # from . import LayerNorm
-# from . import MultiHeadAttn
+# from . import MultiHeadAttention
 # from . import PositionalEncodigns
 # from . import SkipConnections
