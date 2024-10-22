@@ -1,0 +1,11 @@
+inputs: 
+  img_size: 128
+  in_channels: 3
+
+params: 
+  patch_size: 8
+  d_model: 768
+  dropout_rate: 0.5
+  n_encoder_blocks: 8
+  n_heads: 4
+  ff_size: 2048
