@@ -21,7 +21,7 @@ class FeedForwardBlock(nn.Module):
         
         self.feed_forward = nn.Sequential(
             nn.Linear(d_model, d_ff), 
-            nn.ReLU(),
+            nn.GELU(),
             
             nn.Dropout(dropout_rate), 
             
