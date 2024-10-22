@@ -72,5 +72,6 @@ class MultiHeadAttention(nn.Module):
         if self.__last_compute is None: 
             raise BufferError("You need to make feed forward pass before asking for attention scores")
         
+        # (Batch, h, Seq, Seq)
         return self.__last_compute 
     

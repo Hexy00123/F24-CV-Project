@@ -18,29 +18,28 @@ class ViT(nn.Module):
     ----------
     img_size: int
         size of input image
-    
+
     in_channels: int
         number of channels in input image
-    
+
     patch_size: int = 8
         the size of patch into which the picture will be divided
-    
+
     d_model: int = 768
         dimentionallity of the model - image embedding size
-    
+
     dropout_rate: float = 0.35
         probability to drop activation
-        
+
     n_encoder_blocks: int = 8
         number of encoding blocks that would be used
-    
+
     n_heads: int = 12
         number of heads that MultiHeadAttention block will use
-    
+
     ff_size: int = 2048
         size of feed forward layer of transformer
     """
-    
 
     def __init__(
         self,
@@ -54,7 +53,7 @@ class ViT(nn.Module):
         ff_size: int = 2048,
     ):
         super().__init__()
-        
+
         self.img_size: int = img_size
         self.in_channels: int = in_channels
         self.patch_size: int = patch_size
@@ -112,3 +111,59 @@ class ViT(nn.Module):
         image_embedding = encoded[:, 0, :]
 
         return image_embedding
+
+    def interpret(self, image):
+        assert len(image.shape) == 3, "You cannot pass batch"
+        assert image.shape[0] == self.in_channels
+
+        # (1, 3, img_heigth, img_width)
+        image = image.unsqueeze(0)
+        embedding = self(image)
+        h_features, w_features = image.shape[2] // self.embedder.patch_size, image.shape[3] // self.embedder.patch_size
+
+        inference_results = {
+            "embedding": embedding,
+            "encoders": [],
+        }
+
+        for encoder_id, encoder in enumerate(self.encoder.layers):
+            encoder: EncoderBlock
+            attention_block: MultiHeadAttention = encoder.attention_block
+
+            # (1, h, 1+Seq, 1+Seq) --> (h, 1+Seq, 1+Seq)
+            attention_scores: torch.Tensor = attention_block.get_last_compute()[0]
+            
+            # (h, 1+Seq, 1+Seq) --> (h, 1, Seq) --> (h, Seq) --> (h, h_features, w_features)
+            attention_scores: torch.Tensor = attention_scores[:, 0, 1:].view(self.n_heads, h_features, w_features)
+
+            data = {
+                # h x (h_features, w_features)
+                "heads": {
+                    "raw": [attention_head for attention_head in attention_scores],
+                    "normalized": [],
+                },
+                # (h_features, w_features)
+                "aggregated": {
+                    'min': None, 
+                    'max': None, 
+                    'mean': None 
+                },
+            }
+
+            for i in range(attention_scores.size(0)):
+                matrix = attention_scores[i].clone()
+
+                min_val = matrix.min()
+                max_val = matrix.max()
+
+                normalized_matrix = (matrix - min_val) / (max_val - min_val)
+                data["heads"]["normalized"].append(normalized_matrix)
+                
+            data['aggregated']['max'] = torch.stack(data['heads']['normalized']).max(dim=0).values
+            data['aggregated']['min'] = torch.stack(data['heads']['normalized']).min(dim=0).values
+            data['aggregated']['mean'] = torch.stack(data['heads']['normalized']).mean(dim=0)
+
+
+            inference_results["encoders"].append(data)
+
+        return inference_results
