@@ -3,11 +3,18 @@ import torch
 
 from tqdm import tqdm
 from PIL import Image
+from dotenv import load_dotenv
 from datasets import load_dataset
 from torchvision import transforms
 from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
 from PIL import Image
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Accessing an environment variable
+token = os.getenv('HF_TOKEN')
 
 
 # Transformation pipeline for preprocessing images.
@@ -35,7 +42,7 @@ def get_dataloader(dataset, batch_size: int, num_workers: int):
 
 def load_imagenet_dataset(split: str = 'train', streaming: bool = True):
     """Loads ImageNet dataset with specified split and streaming option."""
-    return load_dataset('imagenet-1k', split=split, streaming=streaming, trust_remote_code=True, token='***REMOVED***')
+    return load_dataset('imagenet-1k', split=split, streaming=streaming, trust_remote_code=True, token=token)
 
 
 def get_dataloader_local(data_dir: str, batch_size: int, num_workers: int):
