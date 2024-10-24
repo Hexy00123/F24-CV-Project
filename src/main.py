@@ -37,7 +37,7 @@ if __name__ == '__main__':
         # Load ImageNet dataset
         train_dataset = load_imagenet_dataset(split='train', streaming=True)
         # Downlaod images locally
-        download_images_locally(train_dataset, data_dir, max_num_images=train_config.data.max_images)
+        download_images_locally(train_dataset, data_dir, num_images=train_config.data.num_images)
         # Load images into dataloader
         train_loader = get_dataloader_local(data_dir, train_config.data.batch_size, num_workers)
     else:
@@ -61,4 +61,5 @@ if __name__ == '__main__':
                tps=train_config.train_params.tps,
                tpt=train_config.train_params.tpt,
                beta=train_config.train_params.beta,
-               m=train_config.train_params.m)
+               m=train_config.train_params.m,
+               max_checkpoints=train_config.train_params.max_checkpoints)

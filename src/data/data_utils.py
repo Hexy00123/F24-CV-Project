@@ -60,17 +60,17 @@ def get_dataloader_local(data_dir: str, batch_size: int, num_workers: int):
     return DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
 
 
-def download_images_locally(dataset, data_dir: str, max_num_images: int):
+def download_images_locally(dataset, data_dir: str, num_images: int):
     """Downloads a subset of images from the dataset to a local directory."""
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
     
     # Check how many images are already present
     existing_count = sum([len(files) for _, _, files in os.walk(data_dir)])
-    remaining_images = max_num_images - existing_count
+    remaining_images = num_images - existing_count
 
     if remaining_images <= 0:
-        print(f"{max_num_images} images already downloaded in {data_dir}. Skipping download.")
+        print(f"{num_images} images already downloaded in {data_dir}. Skipping download.")
         return
 
     print(f"{existing_count} images already present. Downloading {remaining_images} more images...")
@@ -89,7 +89,7 @@ def download_images_locally(dataset, data_dir: str, max_num_images: int):
             image.save(image_path)
             downloaded += 1
 
-        if downloaded >= max_num_images:
+        if downloaded >= num_images:
             break
 
     print(f"Downloaded {downloaded - existing_count} images to {data_dir}. Total images: {downloaded}")

@@ -1,0 +1,26 @@
+2024-10-24 20:31:38,671 - src.logs - INFO - Logging is set up.
+2024-10-24 20:31:38,798 - src.logs - INFO - Loaded configuration: {'inputs': {'img_size': 128, 'in_channels': 3}, 'params': {'patch_size': 8, 'd_model': 768, 'dropout_rate': 0.5, 'n_encoder_blocks': 10, 'n_heads': 8, 'ff_size': 2048}}
+2024-10-24 20:31:38,905 - src.logs - INFO - Using local image data.
+2024-10-24 20:32:25,993 - src.train - INFO - Average Loss for Epoch 1/20: 6.25927586555481
+2024-10-24 20:32:55,841 - src.train - INFO - Average Loss for Epoch 2/20: 4.1785578489303585
+2024-10-24 20:33:26,444 - src.train - INFO - Average Loss for Epoch 3/20: 4.433946704864502
+2024-10-24 20:33:56,347 - src.train - INFO - Average Loss for Epoch 4/20: 4.4053405046463014
+2024-10-24 20:34:25,414 - src.train - INFO - Average Loss for Epoch 5/20: 2.195604380965233
+2024-10-24 20:34:56,016 - src.train - INFO - Average Loss for Epoch 6/20: 4.390468227863312
+2024-10-24 20:35:24,911 - src.train - INFO - Average Loss for Epoch 7/20: 5.834139466285706
+2024-10-24 20:35:54,369 - src.train - INFO - Average Loss for Epoch 8/20: 7.060423493385315
+2024-10-24 20:36:24,610 - src.train - INFO - Average Loss for Epoch 9/20: 1.7678397299721837
+2024-10-24 20:36:55,774 - src.train - INFO - Average Loss for Epoch 10/20: 4.6835932493209835
+2024-10-24 20:36:57,090 - src.train - INFO - Checkpoint saved at epoch 10 to /home/user/israel/F24-CV-Project/Checkpoints/checkpoint_epoch_10.pth
+2024-10-24 20:37:27,424 - src.train - INFO - Average Loss for Epoch 11/20: 5.791125333309173
+2024-10-24 20:37:56,537 - src.train - INFO - Average Loss for Epoch 12/20: 7.692894196510315
+2024-10-24 20:38:25,259 - src.train - INFO - Average Loss for Epoch 13/20: 5.280739271640778
+2024-10-24 20:38:56,033 - src.train - INFO - Average Loss for Epoch 14/20: 3.343970447778702
+2024-10-24 20:39:24,806 - src.train - INFO - Average Loss for Epoch 15/20: 5.8714081883430485
+2024-10-24 20:39:54,028 - src.train - INFO - Average Loss for Epoch 16/20: 5.6290096044540405
+2024-10-24 20:40:22,925 - src.train - INFO - Average Loss for Epoch 17/20: 2.3623518884181975
+2024-10-24 20:40:52,514 - src.train - INFO - Average Loss for Epoch 18/20: 5.458635866641998
+2024-10-24 20:41:22,401 - src.train - INFO - Average Loss for Epoch 19/20: 6.773435783386231
+2024-10-24 20:41:50,740 - src.train - INFO - Average Loss for Epoch 20/20: 2.5672082722187044
+2024-10-24 20:41:52,038 - src.train - INFO - Checkpoint saved at epoch 20 to /home/user/israel/F24-CV-Project/Checkpoints/checkpoint_epoch_20.pth
+2024-10-24 20:41:52,039 - src.train - INFO - Training finished and TensorBoard logs saved.
