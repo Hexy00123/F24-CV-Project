@@ -7,6 +7,7 @@ sys.path.append(os.path.join(os.getcwd(), ".."))
 
 from tqdm import tqdm
 from dotenv import load_dotenv
+from src.logs import log_attention_results
 from torch.utils.tensorboard import SummaryWriter
 from src.augmentation import global_augment, multiple_local_augments
 
@@ -30,7 +31,6 @@ def train_dino(dino, data_loader, optimizer, device, num_epochs, tps, tpt, beta,
     """
     logger = logging.getLogger(__name__)
     writer = SummaryWriter(log_dir=runs_dir)
-    steps = 0
 
     for epoch in range(num_epochs):
         # Wrap the data loader with tqdm
@@ -68,8 +68,12 @@ def train_dino(dino, data_loader, optimizer, device, num_epochs, tps, tpt, beta,
     
             # Update the progress bar description with the current loss
             progress_bar.set_postfix(loss=loss.item())
-    
-            steps += 1
+
+            # Log attention maps every 10th epoch, for the first image in the first batch
+            if epoch % 10 == 0 and num_batches == 1:
+                for i, image in enumerate(x[:1]):
+                    interpret_results = dino.student.interpret(image.to(device))
+                    log_attention_results(interpret_results, writer, epoch)
             
         # Compute the average loss for the epoch
         average_loss = total_loss / num_batches

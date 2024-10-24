@@ -37,3 +37,21 @@ def setup_logging(log_dir=log_dir):
     logger = logging.getLogger(__name__)
     logger.info("Logging is set up.")
     return logger
+
+def log_attention_results(results, writer, step):
+    """
+    Logs attention maps for a given set of results.
+    """
+    for encoder_idx, encoder_data in enumerate(results['encoders']):
+        # Log aggregated attention maps
+        writer.add_image(f'Attention/Aggregated_Max_Encoder_{encoder_idx}', 
+                         encoder_data['aggregated']['max'].unsqueeze(0), step)
+        writer.add_image(f'Attention/Aggregated_Mean_Encoder_{encoder_idx}', 
+                         encoder_data['aggregated']['mean'].unsqueeze(0), step)
+        writer.add_image(f'Attention/Aggregated_Min_Encoder_{encoder_idx}', 
+                         encoder_data['aggregated']['min'].unsqueeze(0), step)
+        
+        # Log individual heads' normalized attention maps
+        for head_idx, head_data in enumerate(encoder_data['heads']['normalized']):
+            writer.add_image(f'Attention/Normalized_Head_{head_idx}_Encoder_{encoder_idx}', 
+                             head_data.unsqueeze(0), step)

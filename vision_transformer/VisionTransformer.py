@@ -112,7 +112,7 @@ class ViT(nn.Module):
 
         return image_embedding
 
-    def interpret(self, image, writer, steps):
+    def interpret(self, image):
         assert len(image.shape) == 3, "You cannot pass batch"
         assert image.shape[0] == self.in_channels
 
@@ -158,19 +158,10 @@ class ViT(nn.Module):
 
                 normalized_matrix = (matrix - min_val) / (max_val - min_val)
                 data["heads"]["normalized"].append(normalized_matrix)
-
-                # Log the normalized attention map to TensorBoard
-                writer.add_image(f'Attention/Layer_{encoder_id}/Head_{i}', normalized_matrix.unsqueeze(0), steps)
                 
             data['aggregated']['max'] = torch.stack(data['heads']['normalized']).max(dim=0).values
             data['aggregated']['min'] = torch.stack(data['heads']['normalized']).min(dim=0).values
             data['aggregated']['mean'] = torch.stack(data['heads']['normalized']).mean(dim=0)
-
-            # Log the aggregated attention maps to TensorBoard
-            writer.add_image(f'Attention/Layer_{encoder_id}/Aggregated/Max', data['aggregated']['max'].unsqueeze(0), steps)
-            writer.add_image(f'Attention/Layer_{encoder_id}/Aggregated/Min', data['aggregated']['min'].unsqueeze(0), steps)
-            writer.add_image(f'Attention/Layer_{encoder_id}/Aggregated/Mean', data['aggregated']['mean'].unsqueeze(0), steps)
-
 
             inference_results["encoders"].append(data)
 
