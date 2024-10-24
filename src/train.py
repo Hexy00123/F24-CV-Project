@@ -19,10 +19,12 @@ def train_dino(dino, data_loader, optimizer, device, num_epochs, tps=0.9, tpt=0.
     steps = 0
 
     for epoch in range(num_epochs):
-        logger.info(f"Epoch: {epoch + 1}/{num_epochs}")
-    
         # Wrap the data loader with tqdm
         progress_bar = tqdm(data_loader, desc=f"Epoch {epoch + 1}/{num_epochs}")
+
+        # Initialize the total loss for the epoch
+        total_loss = 0.0
+        num_batches = 0
     
         for x, _ in progress_bar:
             x1, x2 = global_augment(x), multiple_local_augments(x)
@@ -35,25 +37,34 @@ def train_dino(dino, data_loader, optimizer, device, num_epochs, tps=0.9, tpt=0.
             loss = (dino.distillation_loss(teacher_output1, student_output2, dino.center, tps, tpt) +
                     dino.distillation_loss(teacher_output2, student_output1, dino.center, tps, tpt)) / 2
     
-            logger.info(f"Loss: {loss.item()}")
     
             # Backpropagation
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
+
+            # Accumulate the total loss
+            total_loss += loss.item()
+            num_batches += 1
     
             # Update teacher parameters and center
             dino.teacher_update(beta)
             with torch.no_grad():
                 dino.center = m * dino.center + (1 - m) * torch.cat([teacher_output1, teacher_output2], dim=0).mean(dim=0)
     
-            # Log the loss to TensorBoard
-            writer.add_scalar('Loss/train', loss.item(), steps)
-    
             # Update the progress bar description with the current loss
             progress_bar.set_postfix(loss=loss.item())
     
             steps += 1
+            
+        # Compute the average loss for the epoch
+        average_loss = total_loss / num_batches
+    
+        # Log the average loss to TensorBoard
+        writer.add_scalar('Loss/train', average_loss, epoch)
+    
+        # Log the average loss to the logger
+        logger.info(f"Average Loss for Epoch {epoch + 1}/{num_epochs}: {average_loss}")
     
     writer.close()
     logger.info("Training finished and TensorBoard logs saved.")
