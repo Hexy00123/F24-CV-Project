@@ -48,7 +48,7 @@ if __name__ == '__main__':
     
     # Initialize DINO model and optimizer
     dino = DINO(config.inputs.img_size, config.inputs.in_channels, config['params'], device).to(device)
-    optimizer = torch.optim.Adam(dino.parameters(), lr=1e-4)
+    optimizer = torch.optim.AdamW(dino.parameters(), lr=1e-4)
 
 
     # Train the model
