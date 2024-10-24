@@ -6,16 +6,30 @@ import logging
 sys.path.append(os.path.join(os.getcwd(), ".."))
 
 from tqdm import tqdm
+from dotenv import load_dotenv
 from torch.utils.tensorboard import SummaryWriter
 from src.augmentation import global_augment, multiple_local_augments
 
+# Load environment variables from .env file
+load_dotenv()
 
-def train_dino(dino, data_loader, optimizer, device, num_epochs, tps=0.9, tpt=0.04, beta=0.9, m=0.9):
+# Get the project root directory from the environment variable
+project_root = os.getenv('PROJECT_ROOT')
+if not project_root:
+    raise ValueError("PROJECT_ROOT environment variable is not set.")
+
+# Define the runs directory
+runs_dir = os.path.join(project_root, 'training_logs/runs/dino')
+
+# Ensure the runs directory exists
+os.makedirs(runs_dir, exist_ok=True)
+
+def train_dino(dino, data_loader, optimizer, device, num_epochs, tps, tpt, beta, m):
     """
     Train the DINO model.
     """
     logger = logging.getLogger(__name__)
-    writer = SummaryWriter(log_dir='runs/dino')
+    writer = SummaryWriter(log_dir=runs_dir)
     steps = 0
 
     for epoch in range(num_epochs):
