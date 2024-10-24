@@ -1,5 +1,6 @@
 import os
 import torch
+import warnings
 
 from tqdm import tqdm
 from PIL import Image
@@ -8,7 +9,13 @@ from datasets import load_dataset
 from torchvision import transforms
 from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
-from PIL import Image
+
+from src.read_config import read_config
+
+warnings.filterwarnings('ignore')
+
+# Load configuration to get image size
+model_config = read_config(config_path='../configs', config_name='architecture_dino.yaml')
 
 # Load environment variables from .env file
 load_dotenv()
@@ -16,11 +23,10 @@ load_dotenv()
 # Accessing an environment variable
 token = os.getenv('HF_TOKEN')
 
-
 # Transformation pipeline for preprocessing images.
 transform = transforms.Compose([
     transforms.Lambda(lambda img: img.convert("RGB")),
-    transforms.Resize((128, 128)),
+    transforms.Resize((model_config.inputs.img_size, model_config.inputs.img_size)),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
@@ -47,7 +53,10 @@ def load_imagenet_dataset(split: str = 'train', streaming: bool = True):
 
 def get_dataloader_local(data_dir: str, batch_size: int, num_workers: int):
     """Loads a DataLoader from locally stored images."""
+    # Create the dataset with the defined transformations
     dataset = ImageFolder(root=data_dir, transform=transform)
+
+    # return dataloader
     return DataLoader(dataset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
 
 

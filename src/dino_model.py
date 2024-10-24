@@ -10,10 +10,12 @@ class DINO(nn.Module):
         """
         super(DINO, self).__init__()
         self.transformer_config = transformer_config
+        self.img_size = img_size
+        self.in_channels = in_channels
 
         # Initialize student and teacher models
-        self.student = ViT(img_size=img_size, in_channels=in_channels, **self.transformer_config).to(device)
-        self.teacher = ViT(img_size=img_size, in_channels=in_channels, **self.transformer_config).to(device)
+        self.student = ViT(img_size=self.img_size, in_channels=self.in_channels, **self.transformer_config).to(device)
+        self.teacher = ViT(img_size=self.img_size, in_channels=self.in_channels, **self.transformer_config).to(device)
         
         # Copy student weights to teacher and freeze teacher parameters
         self.teacher.load_state_dict(self.student.state_dict())
