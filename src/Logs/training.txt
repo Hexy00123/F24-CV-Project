@@ -1,0 +1,322 @@
+2024-10-24 13:57:16,716 - src.logs - INFO - Logging is set up.
+2024-10-24 13:57:16,795 - src.logs - INFO - Loaded configuration: {'inputs': {'img_size': 128, 'in_channels': 3}, 'params': {'patch_size': 8, 'd_model': 768, 'dropout_rate': 0.5, 'n_encoder_blocks': 10, 'n_heads': 8, 'ff_size': 2048}}
+2024-10-24 13:57:16,910 - src.logs - INFO - Using local image data.
+2024-10-24 13:57:25,741 - src.train - INFO - Epoch: 1/6
+2024-10-24 13:57:27,612 - src.train - INFO - Loss: 7.066242694854736
+2024-10-24 13:57:28,890 - src.train - INFO - Loss: 6.681580066680908
+2024-10-24 13:57:29,873 - src.train - INFO - Loss: 6.81776237487793
+2024-10-24 13:57:30,891 - src.train - INFO - Loss: 5.939563751220703
+2024-10-24 13:57:31,992 - src.train - INFO - Loss: 7.067386627197266
+2024-10-24 13:57:33,164 - src.train - INFO - Loss: 6.951398849487305
+2024-10-24 13:57:33,812 - src.train - INFO - Loss: 6.026264190673828
+2024-10-24 13:57:33,995 - src.train - INFO - Epoch: 2/6
+2024-10-24 13:57:35,209 - src.train - INFO - Loss: 6.789121150970459
+2024-10-24 13:57:36,176 - src.train - INFO - Loss: 6.7166547775268555
+2024-10-24 13:57:37,181 - src.train - INFO - Loss: 4.59102725982666
+2024-10-24 13:57:38,179 - src.train - INFO - Loss: 6.676362991333008
+2024-10-24 13:57:39,416 - src.train - INFO - Loss: 5.611568927764893
+2024-10-24 13:57:40,130 - src.train - INFO - Loss: 5.569875717163086
+2024-10-24 13:57:40,671 - src.train - INFO - Loss: 5.746166706085205
+2024-10-24 13:57:40,856 - src.train - INFO - Epoch: 3/6
+2024-10-24 13:57:42,296 - src.train - INFO - Loss: 5.846172332763672
+2024-10-24 13:57:43,409 - src.train - INFO - Loss: 5.530714988708496
+2024-10-24 13:57:44,372 - src.train - INFO - Loss: 5.427818298339844
+2024-10-24 13:57:45,294 - src.train - INFO - Loss: 4.71873664855957
+2024-10-24 13:57:46,365 - src.train - INFO - Loss: 5.477799892425537
+2024-10-24 13:57:47,368 - src.train - INFO - Loss: 4.252243518829346
+2024-10-24 13:57:47,890 - src.train - INFO - Loss: 5.276589393615723
+2024-10-24 13:57:48,076 - src.train - INFO - Epoch: 4/6
+2024-10-24 13:57:49,247 - src.train - INFO - Loss: 5.664244651794434
+2024-10-24 13:57:50,195 - src.train - INFO - Loss: 4.247147560119629
+2024-10-24 13:57:51,174 - src.train - INFO - Loss: 3.5048069953918457
+2024-10-24 13:57:52,193 - src.train - INFO - Loss: 4.738813400268555
+2024-10-24 13:57:53,260 - src.train - INFO - Loss: 5.086796760559082
+2024-10-24 13:57:54,208 - src.train - INFO - Loss: 3.855842113494873
+2024-10-24 13:57:54,669 - src.train - INFO - Loss: 4.471014022827148
+2024-10-24 13:57:54,855 - src.train - INFO - Epoch: 5/6
+2024-10-24 13:57:56,001 - src.train - INFO - Loss: 4.201740741729736
+2024-10-24 13:57:56,980 - src.train - INFO - Loss: 4.7244720458984375
+2024-10-24 13:57:57,914 - src.train - INFO - Loss: 3.8765556812286377
+2024-10-24 13:57:58,857 - src.train - INFO - Loss: 3.931580066680908
+2024-10-24 13:57:59,747 - src.train - INFO - Loss: 4.000072002410889
+2024-10-24 13:58:00,774 - src.train - INFO - Loss: 3.3774325847625732
+2024-10-24 13:58:01,372 - src.train - INFO - Loss: 3.6646130084991455
+2024-10-24 13:58:01,563 - src.train - INFO - Epoch: 6/6
+2024-10-24 13:58:02,611 - src.train - INFO - Loss: 4.131588935852051
+2024-10-24 13:58:03,466 - src.train - INFO - Loss: 3.016160488128662
+2024-10-24 13:58:04,461 - src.train - INFO - Loss: 4.48701286315918
+2024-10-24 13:58:05,391 - src.train - INFO - Loss: 4.303574562072754
+2024-10-24 13:58:06,376 - src.train - INFO - Loss: 4.363635540008545
+2024-10-24 13:58:07,296 - src.train - INFO - Loss: 4.9725494384765625
+2024-10-24 13:58:07,912 - src.train - INFO - Loss: 3.59905743598938
+2024-10-24 13:58:08,101 - src.train - INFO - Training finished and TensorBoard logs saved.
+2024-10-24 14:06:09,216 - src.logs - INFO - Logging is set up.
+2024-10-24 14:06:09,297 - src.logs - INFO - Loaded configuration: {'inputs': {'img_size': 128, 'in_channels': 3}, 'params': {'patch_size': 8, 'd_model': 768, 'dropout_rate': 0.5, 'n_encoder_blocks': 10, 'n_heads': 8, 'ff_size': 2048}}
+2024-10-24 14:06:09,419 - src.logs - INFO - Using local image data.
+2024-10-24 14:06:19,916 - src.train - INFO - Epoch: 1/6
+2024-10-24 14:06:21,721 - src.train - INFO - Loss: 6.773664951324463
+2024-10-24 14:06:23,085 - src.train - INFO - Loss: 6.775850296020508
+2024-10-24 14:06:24,142 - src.train - INFO - Loss: 7.384803771972656
+2024-10-24 14:06:25,191 - src.train - INFO - Loss: 7.2228264808654785
+2024-10-24 14:06:26,098 - src.train - INFO - Loss: 7.521280765533447
+2024-10-24 14:06:27,007 - src.train - INFO - Loss: 7.183151721954346
+2024-10-24 14:06:27,446 - src.train - INFO - Loss: 3.636044979095459
+2024-10-24 14:06:27,614 - src.train - INFO - Epoch: 2/6
+2024-10-24 14:06:28,893 - src.train - INFO - Loss: 7.048202037811279
+2024-10-24 14:06:29,879 - src.train - INFO - Loss: 7.104672908782959
+2024-10-24 14:06:30,904 - src.train - INFO - Loss: 5.743521690368652
+2024-10-24 14:06:31,745 - src.train - INFO - Loss: 6.399035453796387
+2024-10-24 14:06:32,787 - src.train - INFO - Loss: 6.0491437911987305
+2024-10-24 14:06:33,651 - src.train - INFO - Loss: 5.686890602111816
+2024-10-24 14:06:34,059 - src.train - INFO - Loss: 4.478609085083008
+2024-10-24 14:06:34,212 - src.train - INFO - Epoch: 3/6
+2024-10-24 14:06:35,588 - src.train - INFO - Loss: 5.359806537628174
+2024-10-24 14:06:36,418 - src.train - INFO - Loss: 5.1612958908081055
+2024-10-24 14:06:37,277 - src.train - INFO - Loss: 4.55104398727417
+2024-10-24 14:06:38,362 - src.train - INFO - Loss: 4.262409210205078
+2024-10-24 14:06:39,268 - src.train - INFO - Loss: 4.507656097412109
+2024-10-24 14:06:40,215 - src.train - INFO - Loss: 4.258329391479492
+2024-10-24 14:06:40,599 - src.train - INFO - Loss: 4.31486701965332
+2024-10-24 14:06:40,757 - src.train - INFO - Epoch: 4/6
+2024-10-24 14:06:42,093 - src.train - INFO - Loss: 5.839987754821777
+2024-10-24 14:06:43,187 - src.train - INFO - Loss: 6.3935394287109375
+2024-10-24 14:06:44,132 - src.train - INFO - Loss: 2.5823590755462646
+2024-10-24 14:06:44,871 - src.train - INFO - Loss: 5.1813836097717285
+2024-10-24 14:06:45,917 - src.train - INFO - Loss: 3.1677064895629883
+2024-10-24 14:06:46,882 - src.train - INFO - Loss: 3.7651729583740234
+2024-10-24 14:06:47,245 - src.train - INFO - Loss: 5.471868991851807
+2024-10-24 14:06:47,406 - src.train - INFO - Epoch: 5/6
+2024-10-24 14:06:48,647 - src.train - INFO - Loss: 5.435160160064697
+2024-10-24 14:06:49,536 - src.train - INFO - Loss: 4.82215690612793
+2024-10-24 14:06:50,574 - src.train - INFO - Loss: 4.341456413269043
+2024-10-24 14:06:51,517 - src.train - INFO - Loss: 4.953164577484131
+2024-10-24 14:06:52,215 - src.train - INFO - Loss: 4.167574882507324
+2024-10-24 14:06:53,253 - src.train - INFO - Loss: 5.08394718170166
+2024-10-24 14:06:53,644 - src.train - INFO - Loss: 1.006325602531433
+2024-10-24 14:06:53,802 - src.train - INFO - Epoch: 6/6
+2024-10-24 14:06:54,847 - src.train - INFO - Loss: 4.645366668701172
+2024-10-24 14:06:55,884 - src.train - INFO - Loss: 4.276443004608154
+2024-10-24 14:06:56,902 - src.train - INFO - Loss: 3.9045772552490234
+2024-10-24 14:06:57,998 - src.train - INFO - Loss: 5.186317443847656
+2024-10-24 14:06:58,997 - src.train - INFO - Loss: 5.741180419921875
+2024-10-24 14:06:59,911 - src.train - INFO - Loss: 4.160009384155273
+2024-10-24 14:07:00,386 - src.train - INFO - Loss: 4.9009690284729
+2024-10-24 14:07:00,526 - src.train - INFO - Training finished and TensorBoard logs saved.
+2024-10-24 14:08:56,310 - src.logs - INFO - Logging is set up.
+2024-10-24 14:08:56,428 - src.logs - INFO - Loaded configuration: {'inputs': {'img_size': 128, 'in_channels': 3}, 'params': {'patch_size': 8, 'd_model': 768, 'dropout_rate': 0.5, 'n_encoder_blocks': 10, 'n_heads': 8, 'ff_size': 2048}}
+2024-10-24 14:08:56,556 - src.logs - INFO - Using local image data.
+2024-10-24 14:09:04,725 - src.train - INFO - Epoch: 1/6
+2024-10-24 14:09:06,440 - src.train - INFO - Loss: 6.513215065002441
+2024-10-24 14:09:07,585 - src.train - INFO - Loss: 7.197282791137695
+2024-10-24 14:09:08,584 - src.train - INFO - Loss: 6.8119635581970215
+2024-10-24 14:09:09,601 - src.train - INFO - Loss: 6.795367240905762
+2024-10-24 14:09:10,473 - src.train - INFO - Loss: 7.0174689292907715
+2024-10-24 14:09:11,482 - src.train - INFO - Loss: 6.850767612457275
+2024-10-24 14:09:11,858 - src.train - INFO - Loss: 7.004146575927734
+2024-10-24 14:09:12,014 - src.train - INFO - Epoch: 2/6
+2024-10-24 14:09:13,115 - src.train - INFO - Loss: 5.737729549407959
+2024-10-24 14:09:14,186 - src.train - INFO - Loss: 6.800890922546387
+2024-10-24 14:09:15,113 - src.train - INFO - Loss: 5.837202072143555
+2024-10-24 14:09:16,180 - src.train - INFO - Loss: 6.190646171569824
+2024-10-24 14:09:17,017 - src.train - INFO - Loss: 5.224010467529297
+2024-10-24 14:09:17,808 - src.train - INFO - Loss: 7.145382404327393
+2024-10-24 14:09:18,146 - src.train - INFO - Loss: 3.9511513710021973
+2024-10-24 14:09:18,293 - src.train - INFO - Epoch: 3/6
+2024-10-24 14:09:19,803 - src.train - INFO - Loss: 4.424907684326172
+2024-10-24 14:09:20,857 - src.train - INFO - Loss: 4.939911365509033
+2024-10-24 14:09:21,867 - src.train - INFO - Loss: 5.073947906494141
+2024-10-24 14:09:22,782 - src.train - INFO - Loss: 4.15329647064209
+2024-10-24 14:09:23,794 - src.train - INFO - Loss: 4.165503025054932
+2024-10-24 14:09:24,803 - src.train - INFO - Loss: 5.645992279052734
+2024-10-24 14:09:25,140 - src.train - INFO - Loss: 3.3711776733398438
+2024-10-24 14:09:25,279 - src.train - INFO - Epoch: 4/6
+2024-10-24 14:09:26,596 - src.train - INFO - Loss: 3.744523525238037
+2024-10-24 14:09:27,531 - src.train - INFO - Loss: 4.048203468322754
+2024-10-24 14:09:28,403 - src.train - INFO - Loss: 5.724764823913574
+2024-10-24 14:09:29,498 - src.train - INFO - Loss: 3.9826297760009766
+2024-10-24 14:09:30,402 - src.train - INFO - Loss: 4.3057708740234375
+2024-10-24 14:09:31,338 - src.train - INFO - Loss: 4.2857184410095215
+2024-10-24 14:09:31,646 - src.train - INFO - Loss: 4.960059642791748
+2024-10-24 14:09:31,805 - src.train - INFO - Epoch: 5/6
+2024-10-24 14:09:32,978 - src.train - INFO - Loss: 4.795836925506592
+2024-10-24 14:09:34,053 - src.train - INFO - Loss: 5.467164993286133
+2024-10-24 14:09:35,041 - src.train - INFO - Loss: 3.6590561866760254
+2024-10-24 14:09:35,840 - src.train - INFO - Loss: 3.794421672821045
+2024-10-24 14:09:36,709 - src.train - INFO - Loss: 4.468263149261475
+2024-10-24 14:09:37,589 - src.train - INFO - Loss: 3.880253791809082
+2024-10-24 14:09:37,939 - src.train - INFO - Loss: 2.7925963401794434
+2024-10-24 14:09:38,085 - src.train - INFO - Epoch: 6/6
+2024-10-24 14:09:39,394 - src.train - INFO - Loss: 3.180614709854126
+2024-10-24 14:09:40,397 - src.train - INFO - Loss: 3.5166449546813965
+2024-10-24 14:09:41,416 - src.train - INFO - Loss: 5.914672374725342
+2024-10-24 14:09:42,476 - src.train - INFO - Loss: 3.8411777019500732
+2024-10-24 14:09:43,317 - src.train - INFO - Loss: 5.808567047119141
+2024-10-24 14:09:44,187 - src.train - INFO - Loss: 3.8915188312530518
+2024-10-24 14:09:44,555 - src.train - INFO - Loss: 5.00492000579834
+2024-10-24 14:09:44,705 - src.train - INFO - Training finished and TensorBoard logs saved.
+2024-10-24 14:12:41,846 - src.logs - INFO - Logging is set up.
+2024-10-24 14:12:41,926 - src.logs - INFO - Loaded configuration: {'inputs': {'img_size': 128, 'in_channels': 3}, 'params': {'patch_size': 8, 'd_model': 768, 'dropout_rate': 0.5, 'n_encoder_blocks': 10, 'n_heads': 8, 'ff_size': 2048}}
+2024-10-24 14:12:42,053 - src.logs - INFO - Using local image data.
+2024-10-24 14:12:50,130 - src.train - INFO - Epoch: 1/6
+2024-10-24 14:13:25,347 - src.logs - INFO - Logging is set up.
+2024-10-24 14:13:25,429 - src.logs - INFO - Loaded configuration: {'inputs': {'img_size': 128, 'in_channels': 3}, 'params': {'patch_size': 8, 'd_model': 768, 'dropout_rate': 0.5, 'n_encoder_blocks': 10, 'n_heads': 8, 'ff_size': 2048}}
+2024-10-24 14:13:25,547 - src.logs - INFO - Using local image data.
+2024-10-24 14:13:34,154 - src.train - INFO - Epoch: 1/6
+2024-10-24 14:13:36,242 - src.train - INFO - Loss: 6.738961219787598
+2024-10-24 14:13:37,509 - src.train - INFO - Loss: 7.399297714233398
+2024-10-24 14:13:38,402 - src.train - INFO - Loss: 7.0058817863464355
+2024-10-24 14:13:39,486 - src.train - INFO - Loss: 5.831075668334961
+2024-10-24 14:13:40,690 - src.train - INFO - Loss: 6.7755022048950195
+2024-10-24 14:13:41,596 - src.train - INFO - Loss: 5.80855131149292
+2024-10-24 14:13:41,991 - src.train - INFO - Loss: 6.683943271636963
+2024-10-24 14:13:42,155 - src.train - INFO - Epoch: 2/6
+2024-10-24 14:13:43,412 - src.train - INFO - Loss: 6.570657730102539
+2024-10-24 14:13:44,196 - src.train - INFO - Loss: 4.444156646728516
+2024-10-24 14:13:45,174 - src.train - INFO - Loss: 6.904477119445801
+2024-10-24 14:13:46,154 - src.train - INFO - Loss: 5.856287002563477
+2024-10-24 14:13:47,003 - src.train - INFO - Loss: 4.666136741638184
+2024-10-24 14:13:48,043 - src.train - INFO - Loss: 5.892014026641846
+2024-10-24 14:13:48,360 - src.train - INFO - Loss: 5.281545639038086
+2024-10-24 14:13:48,525 - src.train - INFO - Epoch: 3/6
+2024-10-24 14:13:49,758 - src.train - INFO - Loss: 6.394837379455566
+2024-10-24 14:13:50,909 - src.train - INFO - Loss: 5.158960342407227
+2024-10-24 14:13:51,806 - src.train - INFO - Loss: 4.351561069488525
+2024-10-24 14:13:52,774 - src.train - INFO - Loss: 3.5078177452087402
+2024-10-24 14:13:53,790 - src.train - INFO - Loss: 3.996119499206543
+2024-10-24 14:13:54,645 - src.train - INFO - Loss: 5.172773361206055
+2024-10-24 14:13:54,962 - src.train - INFO - Loss: 6.152947902679443
+2024-10-24 14:13:55,131 - src.train - INFO - Epoch: 4/6
+2024-10-24 14:13:56,501 - src.train - INFO - Loss: 5.516226768493652
+2024-10-24 14:13:57,354 - src.train - INFO - Loss: 4.84431266784668
+2024-10-24 14:13:58,273 - src.train - INFO - Loss: 4.489933490753174
+2024-10-24 14:13:59,287 - src.train - INFO - Loss: 3.690122127532959
+2024-10-24 14:14:00,293 - src.train - INFO - Loss: 4.066077709197998
+2024-10-24 14:14:01,378 - src.train - INFO - Loss: 5.716969013214111
+2024-10-24 14:14:01,861 - src.train - INFO - Loss: 6.0568461418151855
+2024-10-24 14:14:02,019 - src.train - INFO - Epoch: 5/6
+2024-10-24 14:14:03,296 - src.train - INFO - Loss: 4.772328853607178
+2024-10-24 14:14:04,178 - src.train - INFO - Loss: 4.221818923950195
+2024-10-24 14:14:05,164 - src.train - INFO - Loss: 3.7184786796569824
+2024-10-24 14:14:06,143 - src.train - INFO - Loss: 3.773174285888672
+2024-10-24 14:14:07,097 - src.train - INFO - Loss: 4.887104034423828
+2024-10-24 14:14:08,092 - src.train - INFO - Loss: 5.4235429763793945
+2024-10-24 14:14:08,454 - src.train - INFO - Loss: 4.438964366912842
+2024-10-24 14:14:08,617 - src.train - INFO - Epoch: 6/6
+2024-10-24 14:14:09,759 - src.train - INFO - Loss: 5.190984725952148
+2024-10-24 14:14:10,813 - src.train - INFO - Loss: 4.917004108428955
+2024-10-24 14:14:11,889 - src.train - INFO - Loss: 5.262778282165527
+2024-10-24 14:14:12,910 - src.train - INFO - Loss: 3.7642643451690674
+2024-10-24 14:14:13,852 - src.train - INFO - Loss: 4.7647271156311035
+2024-10-24 14:14:14,777 - src.train - INFO - Loss: 4.652783393859863
+2024-10-24 14:14:15,141 - src.train - INFO - Loss: 3.093595027923584
+2024-10-24 14:14:15,303 - src.train - INFO - Training finished and TensorBoard logs saved.
+2024-10-24 14:17:13,489 - src.logs - INFO - Logging is set up.
+2024-10-24 14:17:13,569 - src.logs - INFO - Loaded configuration: {'inputs': {'img_size': 128, 'in_channels': 3}, 'params': {'patch_size': 8, 'd_model': 768, 'dropout_rate': 0.5, 'n_encoder_blocks': 10, 'n_heads': 8, 'ff_size': 2048}}
+2024-10-24 14:17:13,688 - src.logs - INFO - Using local image data.
+2024-10-24 14:17:21,657 - src.train - INFO - Epoch: 1/6
+2024-10-24 14:17:23,537 - src.train - INFO - Loss: 7.465479850769043
+2024-10-24 14:17:24,816 - src.train - INFO - Loss: 6.926351070404053
+2024-10-24 14:17:25,879 - src.train - INFO - Loss: 6.766516208648682
+2024-10-24 14:17:26,800 - src.train - INFO - Loss: 7.396997451782227
+2024-10-24 14:17:27,688 - src.train - INFO - Loss: 6.128165245056152
+2024-10-24 14:17:28,582 - src.train - INFO - Loss: 7.0786590576171875
+2024-10-24 14:17:28,975 - src.train - INFO - Loss: 5.9142961502075195
+2024-10-24 14:17:29,137 - src.train - INFO - Epoch: 2/6
+2024-10-24 14:17:30,589 - src.train - INFO - Loss: 6.310321807861328
+2024-10-24 14:17:31,587 - src.train - INFO - Loss: 6.513506889343262
+2024-10-24 14:17:32,616 - src.train - INFO - Loss: 5.823114395141602
+2024-10-24 14:17:33,804 - src.train - INFO - Loss: 6.457209587097168
+2024-10-24 14:17:34,907 - src.train - INFO - Loss: 5.418987274169922
+2024-10-24 14:17:35,988 - src.train - INFO - Loss: 5.633313179016113
+2024-10-24 14:17:36,395 - src.train - INFO - Loss: 4.590478897094727
+2024-10-24 14:17:36,544 - src.train - INFO - Epoch: 3/6
+2024-10-24 14:17:37,902 - src.train - INFO - Loss: 4.616061687469482
+2024-10-24 14:17:38,801 - src.train - INFO - Loss: 5.7696123123168945
+2024-10-24 14:17:39,611 - src.train - INFO - Loss: 5.2892961502075195
+2024-10-24 14:17:40,661 - src.train - INFO - Loss: 3.3225226402282715
+2024-10-24 14:17:41,712 - src.train - INFO - Loss: 5.4936323165893555
+2024-10-24 14:17:42,794 - src.train - INFO - Loss: 4.915205955505371
+2024-10-24 14:17:43,181 - src.train - INFO - Loss: 5.511569976806641
+2024-10-24 14:17:43,327 - src.train - INFO - Epoch: 4/6
+2024-10-24 14:17:44,473 - src.train - INFO - Loss: 3.4266393184661865
+2024-10-24 14:17:45,518 - src.train - INFO - Loss: 4.791416645050049
+2024-10-24 14:17:46,478 - src.train - INFO - Loss: 3.6102025508880615
+2024-10-24 14:17:47,333 - src.train - INFO - Loss: 3.502501964569092
+2024-10-24 14:17:48,273 - src.train - INFO - Loss: 3.312889337539673
+2024-10-24 14:17:49,228 - src.train - INFO - Loss: 4.56999397277832
+2024-10-24 14:17:49,555 - src.train - INFO - Loss: 3.6802890300750732
+2024-10-24 14:17:49,705 - src.train - INFO - Epoch: 5/6
+2024-10-24 14:17:50,818 - src.train - INFO - Loss: 3.4669253826141357
+2024-10-24 14:17:51,653 - src.train - INFO - Loss: 4.001195907592773
+2024-10-24 14:17:52,617 - src.train - INFO - Loss: 4.379965305328369
+2024-10-24 14:17:53,751 - src.train - INFO - Loss: 2.017436981201172
+2024-10-24 14:17:54,665 - src.train - INFO - Loss: 3.240732431411743
+2024-10-24 14:17:55,535 - src.train - INFO - Loss: 2.9128174781799316
+2024-10-24 14:17:55,949 - src.train - INFO - Loss: 3.396976947784424
+2024-10-24 14:17:56,095 - src.train - INFO - Epoch: 6/6
+2024-10-24 14:17:57,286 - src.train - INFO - Loss: 5.174108982086182
+2024-10-24 14:17:58,292 - src.train - INFO - Loss: 5.112293243408203
+2024-10-24 14:17:59,266 - src.train - INFO - Loss: 2.961235284805298
+2024-10-24 14:18:00,204 - src.train - INFO - Loss: 4.253500938415527
+2024-10-24 14:18:01,075 - src.train - INFO - Loss: 2.857640266418457
+2024-10-24 14:18:02,110 - src.train - INFO - Loss: 4.514411449432373
+2024-10-24 14:18:02,432 - src.train - INFO - Loss: 3.1900715827941895
+2024-10-24 14:18:02,590 - src.train - INFO - Training finished and TensorBoard logs saved.
+2024-10-24 14:26:13,111 - src.logs - INFO - Logging is set up.
+2024-10-24 14:26:13,236 - src.logs - INFO - Loaded configuration: {'inputs': {'img_size': 128, 'in_channels': 3}, 'params': {'patch_size': 8, 'd_model': 768, 'dropout_rate': 0.5, 'n_encoder_blocks': 10, 'n_heads': 8, 'ff_size': 2048}}
+2024-10-24 14:26:13,349 - src.logs - INFO - Using local image data.
+2024-10-24 14:26:55,706 - src.logs - INFO - Logging is set up.
+2024-10-24 14:26:55,824 - src.logs - INFO - Loaded configuration: {'inputs': {'img_size': 128, 'in_channels': 3}, 'params': {'patch_size': 8, 'd_model': 768, 'dropout_rate': 0.5, 'n_encoder_blocks': 10, 'n_heads': 8, 'ff_size': 2048}}
+2024-10-24 14:26:55,930 - src.logs - INFO - Using local image data.
+2024-10-24 14:27:50,654 - src.logs - INFO - Logging is set up.
+2024-10-24 14:27:50,736 - src.logs - INFO - Loaded configuration: {'inputs': {'img_size': 128, 'in_channels': 3}, 'params': {'patch_size': 8, 'd_model': 768, 'dropout_rate': 0.5, 'n_encoder_blocks': 10, 'n_heads': 8, 'ff_size': 2048}}
+2024-10-24 14:27:50,852 - src.logs - INFO - Using local image data.
+2024-10-24 14:27:58,653 - src.train - INFO - Epoch: 1/6
+2024-10-24 14:28:00,731 - src.train - INFO - Loss: 7.327874183654785
+2024-10-24 14:28:01,894 - src.train - INFO - Loss: 7.0706562995910645
+2024-10-24 14:28:02,910 - src.train - INFO - Loss: 6.990363121032715
+2024-10-24 14:28:03,932 - src.train - INFO - Loss: 7.2483673095703125
+2024-10-24 14:28:04,767 - src.train - INFO - Loss: 6.854364395141602
+2024-10-24 14:28:05,842 - src.train - INFO - Loss: 6.702320098876953
+2024-10-24 14:28:06,173 - src.train - INFO - Loss: 7.059331893920898
+2024-10-24 14:28:06,339 - src.train - INFO - Epoch: 2/6
+2024-10-24 14:28:07,615 - src.train - INFO - Loss: 6.370257377624512
+2024-10-24 14:28:08,715 - src.train - INFO - Loss: 7.3462324142456055
+2024-10-24 14:28:09,513 - src.train - INFO - Loss: 5.783727645874023
+2024-10-24 14:28:10,313 - src.train - INFO - Loss: 5.530714988708496
+2024-10-24 14:28:11,248 - src.train - INFO - Loss: 5.350046634674072
+2024-10-24 14:28:12,192 - src.train - INFO - Loss: 5.3740997314453125
+2024-10-24 14:28:12,536 - src.train - INFO - Loss: 5.83082914352417
+2024-10-24 14:28:12,684 - src.train - INFO - Epoch: 3/6
+2024-10-24 14:28:13,991 - src.train - INFO - Loss: 5.338242530822754
+2024-10-24 14:28:14,980 - src.train - INFO - Loss: 5.383102893829346
+2024-10-24 14:28:16,012 - src.train - INFO - Loss: 5.682948589324951
+2024-10-24 14:28:16,845 - src.train - INFO - Loss: 5.524327278137207
+2024-10-24 14:28:17,816 - src.train - INFO - Loss: 4.2356672286987305
+2024-10-24 14:28:18,966 - src.train - INFO - Loss: 4.3101420402526855
+2024-10-24 14:28:19,356 - src.train - INFO - Loss: 5.545379161834717
+2024-10-24 14:28:19,514 - src.train - INFO - Epoch: 4/6
+2024-10-24 14:28:20,816 - src.train - INFO - Loss: 4.381342887878418
+2024-10-24 14:28:21,859 - src.train - INFO - Loss: 4.454776763916016
+2024-10-24 14:28:22,778 - src.train - INFO - Loss: 3.799870014190674
+2024-10-24 14:28:23,771 - src.train - INFO - Loss: 3.2614758014678955
+2024-10-24 14:28:24,773 - src.train - INFO - Loss: 4.949277877807617
+2024-10-24 14:28:25,751 - src.train - INFO - Loss: 4.518596649169922
+2024-10-24 14:28:26,150 - src.train - INFO - Loss: 3.6914734840393066
+2024-10-24 14:28:26,294 - src.train - INFO - Epoch: 5/6
+2024-10-24 14:28:27,702 - src.train - INFO - Loss: 3.6754589080810547
+2024-10-24 14:28:28,686 - src.train - INFO - Loss: 3.660778284072876
+2024-10-24 14:28:29,825 - src.train - INFO - Loss: 4.661218643188477
+2024-10-24 14:28:30,754 - src.train - INFO - Loss: 3.9215972423553467
+2024-10-24 14:28:31,771 - src.train - INFO - Loss: 3.6905429363250732
+2024-10-24 14:28:32,695 - src.train - INFO - Loss: 3.0852482318878174
+2024-10-24 14:28:33,039 - src.train - INFO - Loss: 6.38128662109375
+2024-10-24 14:28:33,196 - src.train - INFO - Epoch: 6/6
+2024-10-24 14:28:34,473 - src.train - INFO - Loss: 2.485041618347168
+2024-10-24 14:28:35,395 - src.train - INFO - Loss: 4.098690509796143
+2024-10-24 14:28:36,377 - src.train - INFO - Loss: 4.024595260620117
+2024-10-24 14:28:37,356 - src.train - INFO - Loss: 3.0082759857177734
+2024-10-24 14:28:38,308 - src.train - INFO - Loss: 4.644111633300781
+2024-10-24 14:28:39,393 - src.train - INFO - Loss: 3.8646609783172607
+2024-10-24 14:28:39,735 - src.train - INFO - Loss: 5.321685791015625
+2024-10-24 14:28:39,885 - src.train - INFO - Training finished and TensorBoard logs saved.
