@@ -1,0 +1,10 @@
+2024-10-24 20:07:41,843 - src.logs - INFO - Logging is set up.
+2024-10-24 20:07:41,974 - src.logs - INFO - Loaded configuration: {'inputs': {'img_size': 128, 'in_channels': 3}, 'params': {'patch_size': 8, 'd_model': 768, 'dropout_rate': 0.5, 'n_encoder_blocks': 10, 'n_heads': 8, 'ff_size': 2048}}
+2024-10-24 20:07:42,084 - src.logs - INFO - Using local image data.
+2024-10-24 20:07:58,344 - src.train - INFO - Average Loss for Epoch 1/6: 6.509010451180594
+2024-10-24 20:08:05,387 - src.train - INFO - Average Loss for Epoch 2/6: 5.749558857509068
+2024-10-24 20:08:12,779 - src.train - INFO - Average Loss for Epoch 3/6: 4.870722089494977
+2024-10-24 20:08:19,320 - src.train - INFO - Average Loss for Epoch 4/6: 4.394907508577619
+2024-10-24 20:08:26,004 - src.train - INFO - Average Loss for Epoch 5/6: 4.239967550550189
+2024-10-24 20:08:32,992 - src.train - INFO - Average Loss for Epoch 6/6: 5.052453109196255
+2024-10-24 20:08:32,994 - src.train - INFO - Training finished and TensorBoard logs saved.

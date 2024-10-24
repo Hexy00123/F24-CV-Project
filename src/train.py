@@ -21,16 +21,22 @@ if not project_root:
 
 # Define the runs directory
 runs_dir = os.path.join(project_root, 'training_logs/runs/dino')
+# Define chechpoint directory
+checkpoint_dir = os.path.join(project_root, 'checkpoints')
 
 # Ensure the runs directory exists
 os.makedirs(runs_dir, exist_ok=True)
+# Ensure checkpoint directory exists
+os.makedirs(checkpoint_dir, exist_ok=True)
 
-def train_dino(dino, data_loader, optimizer, device, num_epochs, tps, tpt, beta, m):
+def train_dino(dino, data_loader, optimizer, device, num_epochs, tps, tpt, beta, m, max_checkpoints):
     """
     Train the DINO model.
     """
     logger = logging.getLogger(__name__)
     writer = SummaryWriter(log_dir=runs_dir)
+
+    checkpoint_files = []
 
     for epoch in range(num_epochs):
         # Wrap the data loader with tqdm
@@ -83,6 +89,25 @@ def train_dino(dino, data_loader, optimizer, device, num_epochs, tps, tpt, beta,
     
         # Log the average loss to the logger
         logger.info(f"Average Loss for Epoch {epoch + 1}/{num_epochs}: {average_loss}")
+
+        # Save checkpoint every 10 epochs
+        if (epoch + 1) % 10 == 0:
+            checkpoint_path = os.path.join(checkpoint_dir, f'checkpoint_epoch_{epoch + 1}.pth')
+            torch.save({
+                'epoch': epoch + 1,
+                'model_state_dict': dino.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'center': dino.center,
+            }, checkpoint_path)
+            logger.info(f"Checkpoint saved at epoch {epoch + 1} to {checkpoint_path}")
+            # Add the new checkpoint to the list
+            checkpoint_files.append(checkpoint_path)
+
+        # Remove the oldest checkpoint if the list exceeds the maximum number of checkpoints
+        if len(checkpoint_files) > max_checkpoints:
+            oldest_checkpoint = checkpoint_files.pop(0)
+            os.remove(oldest_checkpoint)
+            logger.info(f"Oldest checkpoint {oldest_checkpoint} removed")
     
     writer.close()
     logger.info("Training finished and TensorBoard logs saved.")
