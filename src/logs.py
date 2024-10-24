@@ -1,11 +1,14 @@
 import logging
 import os
+from datetime import datetime
 
-def setup_logging(log_dir='Logs', log_filename='training.txt'):
+def setup_logging(log_dir='Logs'):
     """
     Sets up logging for the project.
     """
-    os.makedirs(log_dir, exist_ok=True)
+    # Generate a timestamp-based filename
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    log_filename = f'training_{timestamp}.txt'
     log_filepath = os.path.join(log_dir, log_filename)
 
     # Configure logging
