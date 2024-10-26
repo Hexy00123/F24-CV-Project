@@ -93,3 +93,4 @@ def download_images_locally(dataset, data_dir: str, num_images: int):
             break
 
     print(f"Downloaded {downloaded - existing_count} images to {data_dir}. Total images: {downloaded}")
+    
