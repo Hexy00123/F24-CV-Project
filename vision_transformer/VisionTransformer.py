@@ -112,6 +112,11 @@ class ViT(nn.Module):
 
         return image_embedding
 
+    def __interpolate(self, tensor): 
+        tensor = tensor.unsqueeze(0).unsqueeze(0)
+        interpolated = torch.nn.functional.interpolate(tensor, scale_factor=(self.patch_size, self.patch_size), mode='nearest')
+        return interpolated[0][0]
+
     def interpret(self, image):
         assert len(image.shape) == 3, "You cannot pass batch"
         assert image.shape[0] == self.in_channels
@@ -139,7 +144,7 @@ class ViT(nn.Module):
             data = {
                 # h x (h_features, w_features)
                 "heads": {
-                    "raw": [attention_head for attention_head in attention_scores],
+                    "raw": [self.__interpolate(attention_head) for attention_head in attention_scores],
                     "normalized": [],
                 },
                 # (h_features, w_features)
@@ -157,7 +162,7 @@ class ViT(nn.Module):
                 max_val = matrix.max()
 
                 normalized_matrix = (matrix - min_val) / (max_val - min_val)
-                data["heads"]["normalized"].append(normalized_matrix)
+                data["heads"]["normalized"].append(self.__interpolate(normalized_matrix))
                 
             data['aggregated']['max'] = torch.stack(data['heads']['normalized']).max(dim=0).values
             data['aggregated']['min'] = torch.stack(data['heads']['normalized']).min(dim=0).values
