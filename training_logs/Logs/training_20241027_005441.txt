@@ -1,0 +1,19 @@
+2024-10-27 00:54:41,419 - src.logs - INFO - Logging is set up.
+2024-10-27 00:54:41,478 - src.logs - INFO - Loaded configuration: {'inputs': {'img_size': 128, 'in_channels': 3}, 'params': {'patch_size': 8, 'd_model': 160, 'dropout_rate': 0.5, 'n_encoder_blocks': 2, 'n_heads': 8, 'ff_size': 200}}
+2024-10-27 00:54:41,576 - src.logs - INFO - Using local image data.
+2024-10-27 00:56:12,037 - src.train - INFO - Average Loss for Epoch 1/30: 5.466523699760437
+2024-10-27 00:57:08,080 - src.train - INFO - Average Loss for Epoch 2/30: 5.418875157833099
+2024-10-27 00:58:02,534 - src.train - INFO - Average Loss for Epoch 3/30: 5.251197097301483
+2024-10-27 00:58:56,359 - src.train - INFO - Average Loss for Epoch 4/30: 5.17803081035614
+2024-10-27 00:59:52,480 - src.train - INFO - Average Loss for Epoch 5/30: 5.1957739329338075
+2024-10-27 01:00:48,615 - src.train - INFO - Average Loss for Epoch 6/30: 5.212412886619568
+2024-10-27 01:01:44,424 - src.train - INFO - Average Loss for Epoch 7/30: 5.102517929077148
+2024-10-27 01:02:41,009 - src.train - INFO - Average Loss for Epoch 8/30: 4.958598458766938
+2024-10-27 01:03:36,892 - src.train - INFO - Average Loss for Epoch 9/30: 5.002531270980835
+2024-10-27 01:04:33,290 - src.train - INFO - Average Loss for Epoch 10/30: 5.085692253112793
+2024-10-27 01:04:33,313 - src.train - INFO - Checkpoint saved at epoch 10 to /home/pc/Documents/Innopolis/F24/CV/Project/checkpoints/checkpoint_epoch_10.pth
+2024-10-27 01:05:29,911 - src.train - INFO - Average Loss for Epoch 11/30: 5.121961493492126
+2024-10-27 01:06:24,507 - src.train - INFO - Average Loss for Epoch 12/30: 4.816654353141785
+2024-10-27 01:07:21,081 - src.train - INFO - Average Loss for Epoch 13/30: 4.9580992603302
+2024-10-27 01:08:18,516 - src.train - INFO - Average Loss for Epoch 14/30: 4.79347516655922
+2024-10-27 01:09:16,460 - src.train - INFO - Average Loss for Epoch 15/30: 4.8942247581481935
