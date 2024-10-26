@@ -94,3 +94,20 @@ def download_images_locally(dataset, data_dir: str, num_images: int):
 
     print(f"Downloaded {downloaded - existing_count} images to {data_dir}. Total images: {downloaded}")
     
+    
+def read_validation_images() -> list[torch.Tensor]: 
+    to_tensor = transforms.ToTensor()
+    normalize = transform.transforms[-1]
+
+    val_images = {"images": [], "tensors": []}
+    patch_size = model_config.params.patch_size
+
+    val_images_path = os.environ["PROJECT_ROOT"] + "/data/val_images/"
+    for x in sorted(os.listdir(val_images_path)):
+        img = Image.open(val_images_path + x)
+        w, h = img.size
+        img = img.resize(((w // 3) // patch_size * patch_size, (h // 3) // patch_size * patch_size))
+        img = to_tensor(img)
+
+        val_images["images"].append(img)
+        val_images["tensors"].append(normalize(img)) 
