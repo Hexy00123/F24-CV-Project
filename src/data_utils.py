@@ -111,3 +111,5 @@ def read_validation_images() -> list[torch.Tensor]:
 
         val_images["images"].append(img)
         val_images["tensors"].append(normalize(img)) 
+        
+    return val_images
