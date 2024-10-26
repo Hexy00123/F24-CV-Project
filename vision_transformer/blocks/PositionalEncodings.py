@@ -19,7 +19,7 @@ class PositionalEncoding(nn.Module):
         The maximum length of the sequence.
     """
 
-    def __init__(self, d_model: int, max_len: int = 5000):
+    def __init__(self, d_model: int, max_len: int = 11500):
         super().__init__()
         
         self.d_model = d_model
