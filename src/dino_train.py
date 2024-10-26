@@ -2,6 +2,7 @@ import os
 import sys
 import torch
 import warnings
+from dotenv import load_dotenv
 
 sys.path.append(os.path.join(os.getcwd(), ".."))
 
@@ -9,7 +10,9 @@ from src.read_config import read_config
 from src.dino_model import DINO
 from src.train import train_dino
 from src.logs import setup_logging
-from src.data.data_utils import get_dataloader, load_imagenet_dataset, get_dataloader_local, download_images_locally
+from src.data_utils import get_dataloader, load_imagenet_dataset, get_dataloader_local, download_images_locally
+
+load_dotenv()
 
 warnings.filterwarnings('ignore')
 
@@ -27,7 +30,7 @@ if __name__ == '__main__':
     device = 'cuda:3' if torch.cuda.is_available() else 'cpu'
 
     # directory for the data
-    data_dir = 'data/images'
+    data_dir = os.environ['PROJECT_ROOT'] + '/data/images'
     
     num_workers = 2
 
