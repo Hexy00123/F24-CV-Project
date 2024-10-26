@@ -4,13 +4,13 @@ import torch
 import warnings
 from dotenv import load_dotenv
 
-sys.path.append(os.path.join(os.getcwd(), ".."))
+sys.path.append(os.path.join(os.getcwd(), "."))
 
-from src.read_config import read_config
-from src.dino_model import DINO
-from src.train import train_dino
-from src.logs import setup_logging
-from src.data_utils import get_dataloader, load_imagenet_dataset, get_dataloader_local, download_images_locally, read_validation_images
+from read_config import read_config
+from dino_model import DINO
+from train import train_dino
+from logs import setup_logging
+from data_utils import get_dataloader, load_imagenet_dataset, get_dataloader_local, download_images_locally, read_validation_images
 
 load_dotenv()
 
