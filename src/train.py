@@ -1,4 +1,5 @@
 import os
+import gc 
 import sys
 import torch
 import logging
@@ -29,7 +30,7 @@ os.makedirs(runs_dir, exist_ok=True)
 # Ensure checkpoint directory exists
 os.makedirs(checkpoint_dir, exist_ok=True)
 
-def train_dino(dino, data_loader, optimizer, device, num_epochs, tps, tpt, beta, m, max_checkpoints):
+def train_dino(dino, data_loader, val_images, optimizer, device, num_epochs, tps, tpt, beta, m, max_checkpoints):
     """
     Train the DINO model.
     """
@@ -75,12 +76,21 @@ def train_dino(dino, data_loader, optimizer, device, num_epochs, tps, tpt, beta,
             # Update the progress bar description with the current loss
             progress_bar.set_postfix(loss=loss.item())
 
-            # Log attention maps every 10th epoch, for the first image in the first batch
-            if epoch % 10 == 0 and num_batches == 1:
-                for i, image in enumerate(x[:1]):
-                    interpret_results = dino.student.interpret(image.to(device))
-                    log_attention_results(interpret_results, writer, epoch)
+        for val_id, (orig, tensor) in enumerate(zip(val_images['images'], val_images['tensors'])):    
+            gc.collect()
+            torch.cuda.empty_cache()
             
+            results = dino.student.interpret(tensor.to(device))
+            logs = {
+                'n_heads': dino.student.n_heads,
+                'results': results, 
+                'val_id': val_id, 
+                'orig': orig, 
+            }
+            
+            log_attention_results(logs, writer, epoch)
+            del logs, results
+                
         # Compute the average loss for the epoch
         average_loss = total_loss / num_batches
     

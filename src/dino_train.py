@@ -10,7 +10,7 @@ from src.read_config import read_config
 from src.dino_model import DINO
 from src.train import train_dino
 from src.logs import setup_logging
-from src.data_utils import get_dataloader, load_imagenet_dataset, get_dataloader_local, download_images_locally
+from src.data_utils import get_dataloader, load_imagenet_dataset, get_dataloader_local, download_images_locally, read_validation_images
 
 load_dotenv()
 
@@ -49,6 +49,7 @@ if __name__ == '__main__':
         train_dataset = load_imagenet_dataset(split='train', streaming=True)
         # Get dataloader
         train_loader = get_dataloader(train_dataset, batch_size=train_config.data.batch_size, num_workers=num_workers)
+    val_images = read_validation_images()
     
     # Initialize DINO model and optimizer
     dino = DINO(model_config.inputs.img_size, model_config.inputs.in_channels, model_config['params'], device).to(device)
@@ -58,6 +59,7 @@ if __name__ == '__main__':
     # Train the model
     train_dino(dino,
                data_loader=train_loader,
+               val_images=val_images,
                optimizer=optimizer,
                device=device,
                num_epochs=train_config.train_params.num_epochs,
