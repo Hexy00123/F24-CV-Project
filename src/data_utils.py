@@ -106,7 +106,7 @@ def read_validation_images() -> list[torch.Tensor]:
     for x in sorted(os.listdir(val_images_path)):
         img = Image.open(val_images_path + x)
         w, h = img.size
-        img = img.resize(((w // 3) // patch_size * patch_size, (h // 3) // patch_size * patch_size))
+        img = img.resize(((w // 5) // patch_size * patch_size, (h // 5) // patch_size * patch_size))
         img = to_tensor(img)
 
         val_images["images"].append(img)
