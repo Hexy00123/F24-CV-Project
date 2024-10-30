@@ -101,17 +101,17 @@ def train_dino(dino, data_loader, val_images, optimizer, device, num_epochs, tps
         logger.info(f"Average Loss for Epoch {epoch + 1}/{num_epochs}: {average_loss}")
 
         # Save checkpoint every 10 epochs
-        if (epoch + 1) % 10 == 0:
-            checkpoint_path = os.path.join(checkpoint_dir, f'checkpoint_epoch_{epoch + 1}.pth')
-            torch.save({
-                'epoch': epoch + 1,
-                'model_state_dict': dino.state_dict(),
-                'optimizer_state_dict': optimizer.state_dict(),
-                'center': dino.center,
-            }, checkpoint_path)
-            logger.info(f"Checkpoint saved at epoch {epoch + 1} to {checkpoint_path}")
-            # Add the new checkpoint to the list
-            checkpoint_files.append(checkpoint_path)
+        # if (epoch + 1) % 10 == 0:
+        checkpoint_path = os.path.join(checkpoint_dir, f'checkpoint_epoch_{epoch + 1}.pth')
+        torch.save({
+            'epoch': epoch + 1,
+            'model_state_dict': dino.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'center': dino.center,
+        }, checkpoint_path)
+        logger.info(f"Checkpoint saved at epoch {epoch + 1} to {checkpoint_path}")
+        # Add the new checkpoint to the list
+        checkpoint_files.append(checkpoint_path)
 
         # Remove the oldest checkpoint if the list exceeds the maximum number of checkpoints
         if len(checkpoint_files) > max_checkpoints:
